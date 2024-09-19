@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 876px) {
+    .container{
+        max-width: 600px;
+    }
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #e6f3ff;
+}
+
+.bot-message {
+    background-color: #f0f0f0;
+}
+
+.message-role {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.message-content {
+    margin-top: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#send-btn {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Enhanced Markdown styles */
+.message-content h1 { 
+    font-size: 1.5em; 
+    margin-top: 0.5em; 
+    margin-bottom: 0.3em;
+    color: #333;
+}
+
+.message-content h2 { 
+    font-size: 1.3em; 
+    margin-top: 0.8em; 
+    margin-bottom: 0.4em;
+    color: #4CAF50;
+    border-bottom: 1px solid #4CAF50;
+    padding-bottom: 0.2em;
+}
+
+.message-content ul, .message-content ol { 
+    padding-left: 1.5em; 
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.message-content li {
+    margin-bottom: 0.3em;
+}
+
+.message-content code { 
+    background-color: #f0f0f0; 
+    padding: 0.2em 0.4em; 
+    border-radius: 3px; 
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 0.9em;
+}
+
+
+
+.message-content h2 + ol li,
+.message-content h2 + ul li {
+    margin-bottom: 0.5em;
+}
+
+
+
+.message-content h2 {
+    margin-bottom: 1em;
+}
+
+.message-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.message-content ul li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.message-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+.message-content p {
+    margin-bottom: 1em;
+}
+
+.message-content h2 {
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    color: #4CAF50;
+    border-bottom: 1px solid #4CAF50;
+    padding-bottom: 0.2em;
+}
+
+.message-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0.5em;
+}
+
+.message-content ul li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.message-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Remove box styling from main content */
+.message-content > p:first-of-type {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 0;
+    border-radius: 0;
+}

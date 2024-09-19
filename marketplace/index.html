@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Crop Marketplace - Buy Top Rated Farm Products Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Discover our crop-care marketplace with a wide selection of top-rated farm products like Hulled Barley, Sorghum Millet, and Upland Cotton. Shop now for quality grains and get expert customer service."
+    />
+    <img
+      alt="Logo"
+      src="https://appproject.dhiwise.com/dhiwise-logo.png?c=&v="
+      style="width: 0px; height: 0px; display: none"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.js" defer></script>
+    <script>
+      async function handleSlider() {
+        const slider = document.querySelector("#slider");
+
+        // Wait for all content to load before setting maxWidth
+        const imageList = slider.querySelectorAll("img");
+        const onLoadPromiseList = [];
+        for (const image of imageList) {
+          if (image.complete) continue;
+
+          const onLoadPromise = new Promise((resolve, reject) => {
+            if (image.complete) return resolve();
+            image.onload = resolve;
+            image.onerror = resolve;
+          });
+          onLoadPromiseList.push(onLoadPromise);
+        }
+        await Promise.all(onLoadPromiseList);
+
+        // Set max width and height to prevent slider from overflowing
+        slider.style.maxWidth = getComputedStyle(slider).width;
+        slider.style.maxHeight = getComputedStyle(slider).height;
+
+        const sliderParent = slider.parentElement;
+        const sliderTrack = document.querySelector("#slider > .swiper-wrapper");
+        const slides = document.querySelectorAll("#slider > .swiper-wrapper > .swiper-slide");
+
+        // Clone slides for infinite loop
+        const slidesToShow = 4;
+        const slidesRequired = 8;
+        for (let i = 0; slides.length <= slidesToShow && i <= slidesRequired - 1; i++) {
+          const index = i % slidesToShow;
+          const clone = slides[index]?.cloneNode(true);
+          clone?.setAttribute("cloned", "");
+          sliderTrack?.appendChild(clone);
+        }
+
+        const swiper = new Swiper("#slider", {
+          grabCursor: true,
+          loop: true,
+          slidesOffsetAfter: 0,
+          slidesOffsetBefore: 0,
+          slidesPerView: 4,
+          navigation: {
+            nextEl: "#slider-control-next",
+          },
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            551: { slidesPerView: 2 },
+            1051: { slidesPerView: 3 },
+            1441: { slidesPerView: 4 },
+          },
+        });
+      }
+
+      /**
+       * Hydrate slider #slider
+       */
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          await handleSlider();
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      /**
+       * Handles the value change functionality in a quantity input
+       */
+      function handleQuantityInput(/** @type {HTMLElement} */ target) {
+        const fieldElement = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-for="${target.id}"]`);
+        const stepUpButton = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-increase]`);
+        const stepDownButton = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-decrease]`);
+
+        const fieldElementIsInput = fieldElement instanceof HTMLInputElement;
+        const fieldElementIsNumberInput = fieldElementIsInput && fieldElement.type === "number";
+
+        function setNumberValue(/** @type {number} */ n = 0) {
+          if (fieldElementIsNumberInput) return;
+          if (fieldElementIsInput) {
+            fieldElement.value = n;
+          } else if (fieldElement) {
+            fieldElement.innerHTML = n;
+          }
+        }
+
+        const input =
+          fieldElement instanceof HTMLInputElement && fieldElement.type === "number"
+            ? fieldElement
+            : (() => {
+                const element = document.createElement("input");
+                element.type = "number";
+                element.min = 0;
+                element.step = 1;
+                element.value = 1;
+                element.hidden = true;
+                return element;
+              })();
+
+        setNumberValue(1);
+        stepUpButton?.addEventListener("click", (/** @type {MouseEvent} */ event) => {
+          input.stepUp();
+          setNumberValue(input.valueAsNumber);
+        });
+        stepDownButton?.addEventListener("click", (/** @type {MouseEvent} */ event) => {
+          input.stepDown();
+          setNumberValue(input.valueAsNumber);
+        });
+      }
+      /**
+       * Hydrate quantity inputs(s)
+       */
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll("[quantity-input]"));
+        for (const element of elements) handleQuantityInput(element);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- main layout section -->
+    <div class="frame-seven">
+      <!-- sidebar and content section -->
+      <div class="mask-group">
+        <!-- sidebar section -->
+        <aside class="sidebar">
+          <div class="sidebar__header">
+            <div class="sidebar__header-row">
+              <img src="public/images/img_hjgfvytty_1.png" alt="Featured Image" class="sidebar__header-row__image" />
+            </div>
+            <h4 class="sidebar__header-row__title ui heading size-headingmd">Crop-Care</h4>
+          </div>
+          <ul class="sidebar__menu">
+            <li>
+              <a>
+                <img src="public/images/img_home.svg" alt="Home Icon" class="sidebar__menu-item__icon" />
+                <span> Home</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_frame.svg" alt="Explore Icon" class="sidebar__menu-item__icon-1" />
+                <span> Explore</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_fi_br_heart.svg" alt="Saved Icon" class="sidebar__menu-item__icon" />
+                <span> Saved</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_cart.svg" alt="Cart Icon" class="sidebar__menu-item__icon" />
+                <span> Cart</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_frame_gray_700.svg" alt="Selling Icon" class="sidebar__menu-item__icon-1" />
+                <span> Selling</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_fi_bs_user.svg" alt="Profile Icon" class="sidebar__menu-item__icon" />
+                <span> Profile</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img
+                  src="public/images/img_frame_gray_700_28x28.svg"
+                  alt="History Icon"
+                  class="sidebar__menu-item__icon-1"
+                />
+                <span> Prchase History</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_frame_28x28.svg" alt="Contact Icon" class="sidebar__menu-item__icon-1" />
+                <span> Contact us</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="public/images/img_frame_1.svg" alt="Settings Icon" class="sidebar__menu-item__icon-1" />
+                <span> Settings</span>
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar__info">
+            <div class="sidebar__info-column">
+              <div class="sidebar__info-column__stack">
+                <img src="public/images/img_vector_1.svg" alt="Help Icon" class="sidebar__info-column__stack__image" />
+                <div class="sidebar__info-column__stack__content">
+                  <img
+                    src="public/images/img_group_72.svg"
+                    alt="Help Image"
+                    class="sidebar__info-column__stack__content__image"
+                  />
+                  <p class="sidebar__info-column__stack__content__text ui heading size-headingxs">Need Help</p>
+                </div>
+              </div>
+              <div class="sidebar__info-column__stack-1">
+                <p class="sidebar__info-column__stack__text ui heading size-texts">
+                  About Account Management Ordering & Payment refund and FAQ
+                </p>
+                <div class="sidebar__info-column__stack__row">
+                  <button class="flex-row-center-center sidebar__info-column__stack__row__button">
+                    Customer Service
+                  </button>
+                  <img
+                    src="public/images/img_vector_2.svg"
+                    alt="Service Icon"
+                    class="sidebar__info-column__stack__row__icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="layout-column">
+          <!-- header section -->
+          <header class="header">
+            <div class="header__top-row">
+              <p class="header__title ui heading size-text4xl">Crops</p>
+              <label class="header__search">
+                <div class="dhi-group">
+                  <img src="public/images/img_search.svg" alt="Search" class="filter" />
+                </div>
+                <input name="Search Bar" placeholder="Search Product" type="text" />
+                <img src="public/images/img_filter.svg" alt="Filter" class="filter" />
+              </label>
+              <div class="header__icon-row">
+                <a href="#">
+                  <button class="header__icon--group">
+                    <img src="public/images/img_group_107.svg" />
+                  </button>
+                </a>
+                <a href="#">
+                  <button class="header__icon--group">
+                    <img src="public/images/img_frame_cyan_900.svg" />
+                  </button>
+                </a>
+                <a href="#">
+                  <img
+                    src="public/images/img_pexels_sound_on_3760847.png"
+                    alt="Notification Icon"
+                    class="header__icon--sound"
+                  />
+                </a>
+              </div>
+            </div>
+            <p class="header__subtitle ui text size-textxl">From top rated farmers</p>
+          </header>
+          <div class="main-content-column">
+            <div class="popular-crops-column">
+              <!-- main product section -->
+              <div class="product-details-column">
+                <div class="product-row">
+                  <div class="product-main-column">
+                    <div class="product-image-stack">
+                      <div class="product-thumbnails">
+                        <div class="profile__image--small"></div>
+                        <div class="profile__image--large"></div>
+                      </div>
+                      <img
+                        src="public/images/img_png_transparent.png"
+                        alt="Main Product Image"
+                        class="product__image"
+                      />
+                    </div>
+                    <div class="product-info-column">
+                      <div class="product-title-group">
+                        <h1 class="sidebar__info-column__stack__content__text ui heading size-text3xl">
+                          Hulled Barley
+                        </h1>
+                        <div class="product-rating-group">
+                          <div class="product__rating ui ratingbar">
+                            <input type="radio" id="ProductRating1" name="ProductRating" value="1" />
+                            <label for="ProductRating1" title="text"> </label>
+                            <input type="radio" id="ProductRating2" name="ProductRating" value="2" />
+                            <label for="ProductRating2" title="text"> </label>
+                            <input type="radio" id="ProductRating3" name="ProductRating" value="3" />
+                            <label for="ProductRating3" title="text"> </label>
+                            <input type="radio" id="ProductRating4" name="ProductRating" value="4" />
+                            <label for="ProductRating4" title="text"> </label>
+                            <input type="radio" id="ProductRating5" name="ProductRating" value="5" />
+                            <label for="ProductRating5" title="text"> </label>
+                          </div>
+                          <h2 class="product__reviews ui heading size-textmd">(1000+ Reviews)</h2>
+                        </div>
+                      </div>
+                      <h3 class="product__description ui heading size-texts">
+                        Hulled barley is a whole grain with the inedible outer husk removed, rich in fiber, vitamins,
+                        and minerals.
+                      </h3>
+                      <h4 class="product__price ui heading size-text2xl">Price : 200 Rs./kg</h4>
+                      <div class="product-quantity-group">
+                        <p class="quantity__label ui text size-textxl">Quantity :</p>
+                        <div quantity-input id="106:60" class="quantity-input-group">
+                          <div quantity-decrease class="quantity__button--decrement">
+                            <img
+                              src="public/images/img_user.svg"
+                              alt="Decrement Icon"
+                              class="sidebar__menu-item__icon"
+                            />
+                          </div>
+                          <p class="quantity__amount ui text size-textxl" quantity-for="106:60">1</p>
+                          <div quantity-increase class="quantity__button--increment">
+                            <img
+                              src="public/images/img_floating_icon.svg"
+                              alt="Increment Icon"
+                              class="icon__floating"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-actions-row">
+                        <button class="icon-button__heart">
+                          <img src="public/images/img_fi_sr_heart.svg" />
+                        </button>
+                        <button class="flex-row-center-center button__add-to-cart">Add to cart</button>
+                        <button class="flex-row-center-center button__buy-now">Buy now</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="product-slider-row">
+                    <div class="cards-fix">
+                    <div class="slider-group">
+                      <div id="slider" class="slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-items-group">
+                              <div class="slider-item-1">
+                                <div>
+                                  <img
+                                    src="public/images/img_1958629509_removebg_preview.png"
+                                    alt="Slider Item Image"
+                                    class="slider__image--previous"
+                                  />
+                                  <!-- <img
+                                    src="public/images/img_settings.svg"
+                                    alt="Slider Settings Icon"
+                                    class="settings__icon"
+                                  /> -->
+                                </div>
+                              </div>
+                              <div>
+                                <div class="slider-item-info-group">
+                                  <h5 class="product__title--secondary ui heading size-headingxs">
+                                    Sorghum Millet
+                                  </h5>
+                                  <h6 class="quantity__amount ui heading size-headingxs">Price : 160 Rs./kg</h6>
+                                  <div class="promotion__title-container">
+                                    <div class="slider-item-rating-group-2">
+                                      <img
+                                        src="public/images/img_signal.svg"
+                                        alt="Rating Signal Icon"
+                                        class="link__icon"
+                                      />
+                                      <p class="rating__value--mini ui heading size-textmd">4.9</p>
+                                    </div>
+                                    <button class="icon-button__close--small">
+                                      <img src="public/images/img_close.svg" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Extra addition -->
+                          <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-items-group">
+                              <div class="slider-item-1">
+                                <div>
+                                  <img
+                                    src="public/images/img_61mhjjse61l.png"
+                                    alt="Slider Item Main Image"
+                                    class="slider__image--previous"
+                                  />
+                                  <!-- <img
+                                    src="public/images/img_settings.svg"
+                                    alt="Slider Settings Icon 2"
+                                    class="settings__icon"
+                                  /> -->
+                                </div>
+                              </div>
+                              <div>
+                                <div class="slider-item-info-group">
+                                  <h5 class="product__title--secondary ui heading size-headingxs">
+                                    Upland Cotton
+                                  </h5>
+                                  <h6 class="quantity__amount ui heading size-headingxs">Price : 320 Rs./kg</h6>
+                                  <div class="promotion__title-container">
+                                    <div class="slider-item-rating-group-2">
+                                      <img
+                                        src="public/images/img_signal.svg"
+                                        alt="Rating Signal Icon"
+                                        class="link__icon"
+                                      />
+                                      <p class="rating__value--mini ui heading size-textmd">5.0</p5.0>
+                                    </div>
+                                    <button class="icon-button__close--small">
+                                      <img src="public/images/img_close.svg" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-items-group">
+                              <div class="slider-item-1">
+                                <div>                                  
+                                <img
+                                  src="public/images/img_purepng.png"
+                                  alt="Group 257"
+                                  class="slider__image--previous"
+                                />
+                                <!-- <img
+                                  src="public/images/img_settings.svg"
+                                  alt="Slider Settings Icon 3"
+                                  class="settings__icon"
+                                /> -->
+                                </div>
+                              </div>
+                              <div>
+                                <div class="slider-item-info-group">
+                                  <h5 class="product__title--secondary ui heading size-headingxs">
+                                    Flint (Indian) Corn
+                                  </h5>
+                                  <h6 class="quantity__amount ui heading size-headingxs">Price : 200 Rs./kg</h6>
+                                  <div class="promotion__title-container">
+                                    <div class="slider-item-rating-group-2">
+                                      <img
+                                        src="public/images/img_signal.svg"
+                                        alt="Rating Signal Icon"
+                                        class="link__icon"
+                                      />
+                                      <p class="rating__value--mini ui heading size-textmd">4.8</p>
+                                    </div>
+                                    <button class="icon-button__close--small">
+                                      <img src="public/images/img_close.svg" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-items-group">
+                              <div class="slider-item-1">
+                                <div>
+                                  <img
+                                  src="public/images/img_d23793c7_51d4_4.png"
+                                  alt="Group 271"
+                                  class="slider__image--previous"
+                                />
+                                  <!-- <img
+                                    src="public/images/img_settings.svg"
+                                    alt="Slider Settings Icon"
+                                    class="settings__icon"
+                                  /> -->
+                                </div>
+                              </div>
+                              <div>
+                                <div class="slider-item-info-group">
+                                  <h5 class="product__title--secondary ui heading size-headingxs">
+                                    Noble Cane
+                                  </h5>
+                                  <h6 class="quantity__amount ui heading size-headingxs">Price : 290 Rs./kg</h6>
+                                  <div class="promotion__title-container">
+                                    <div class="slider-item-rating-group-2">
+                                      <img
+                                        src="public/images/img_signal.svg"
+                                        alt="Rating Signal Icon"
+                                        class="link__icon"
+                                      />
+                                      <p class="rating__value--mini ui heading size-textmd">5.0</p>
+                                    </div>
+                                    <button class="icon-button__close--small">
+                                      <img src="public/images/img_close.svg" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                           <!-- Extra addition finish -->
+                          <!-- <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-item-3">
+                              <div class="slider-item-image-stack">
+                                <div class="slider-item-image-group">
+                                  <img
+                                    src="public/images/img_settings.svg"
+                                    alt="Slider Settings Icon 2"
+                                    class="settings__icon--stacked"
+                                  />
+                                  <img
+                                    src="public/images/img_61mhjjse61l.png"
+                                    alt="Slider Item Main Image"
+                                    class="product__image--overlay"
+                                  />
+                                </div>
+                                <div class="slider-item-info-column">
+                                  <p class="product__title--tertiary ui heading size-headingxs">Upland Cotton</p>
+                                  <p class="quantity__amount ui heading size-headingxs">Price : 320 Rs./kg</p>
+                                </div>
+                                <div class="slider-item-rating-row">
+                                  <div class="slider-item-rating-group-2">
+                                    <img src="public/images/img_signal.svg" alt="Group 251" class="link__icon" />
+                                    <p class="rating__value--mini ui heading size-textmd">5.0</p>
+                                  </div>
+                                  <button class="icon-button__close--small">
+                                    <img src="public/images/img_close.svg" />
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          <!-- <div class="dhi-group-1 swiper-slide">
+                            <div class="slider-item-4">
+                              <div class="slider-item-image-stack-2">
+                                <img
+                                  src="public/images/img_settings.svg"
+                                  alt="Slider Settings Icon 3"
+                                  class="settings__icon--overlay"
+                                />
+                                <img
+                                  src="public/images/img_purepng.png"
+                                  alt="Group 257"
+                                  class="product__image--overlay"
+                                />
+                              </div>
+                              <div>
+                                <div>
+                                  <div class="slider-item-title-group">
+                                    <p class="product__title--secondary ui heading size-headingxs">
+                                      Flint (Indian) Corn
+                                    </p>
+                                    <p class="quantity__amount ui heading size-headingxs">Price : 200 Rs./kg</p>
+                                  </div>
+                                  <div class="slider-item-rating-row">
+                                    <div class="slider-item-rating-group-2">
+                                      <img src="public/images/img_signal.svg" alt="Group 265" class="link__icon" />
+                                      <p class="rating__value--mini ui heading size-textmd">4.8</p>
+                                    </div>
+                                    <button class="icon-button__close--small">
+                                      <img src="public/images/img_close.svg" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          <!-- <div class="dhi-group-1 swiper-slide">
+                            <div class="group-268">
+                              <div class="group-269">
+                                <img
+                                  src="public/images/img_settings_gray_800.svg"
+                                  alt="Slider Settings Icon 4"
+                                  class="settings__icon--gray"
+                                />
+                                <img
+                                  src="public/images/img_d23793c7_51d4_4.png"
+                                  alt="Group 271"
+                                  class="product__image--gray"
+                                />
+                              </div>
+                              <p id="card-t-fix" class="product__title--fifth ui heading size-headingxs">Noble cane</p>
+                              <p id="card-t-fix-a" class="quantity__amount ui heading size-headingxs">Price : 290 Rs./100kg</p>
+                              <div class="slider-item-rating-row-3">
+                                <img src="public/images/img_signal.svg" alt="Rating Signal Icon 4" class="link__icon" />
+                                <p class="rating__value--mini ui heading size-textmd">5.0</p>
+                              </div>
+                            </div>
+                          </div> -->
+                        </div>
+                      </div>
+                      <div class="section__divider"></div>
+                    </div>
+                    </div>
+                    <button id="slider-control-next" class="slider__control--next">
+                      <img src="public/images/img_arrow_right.svg" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- popular crops section -->
+              <div class="explore-crops-column">
+                <div class="group-280">
+                  <h4 class="section__title ui heading size-headings">Explore Popular Crops</h4>
+                  <div class="section__link">
+                    <a href="#">
+                      <p class="ui heading size-textmd">See all</p>
+                    </a>
+                    <img src="public/images/img_arrow_right_gray_700.svg" alt="See All Arrow" class="link__icon" />
+                  </div>
+                </div>
+                <div class="group-285">
+                  <div class="user-profile">
+                    <img src="public/images/img_group_104.png" alt="Image Group" class="user-profile__image" />
+                    <div class="user-profile__divider"></div>
+                    <div class="user-profile__details">
+                      <p class="user-profile__title ui heading size-headingxs">Popular top 10 crops</p>
+                      <p class="user-profile__subtitle ui heading size-texts">5,400+ Orders & reviews</p>
+                    </div>
+                  </div>
+                  <div class="user-profile-1">
+                    <img src="public/images/img_group_104.png" alt="Image Group" class="user-profile__image" />
+                    <div class="user-profile__divider"></div>
+                    <div class="user-profile__details">
+                      <p class="user-profile__title ui heading size-headingxs">Popular top 10 crops</p>
+                      <p class="user-profile__subtitle ui heading size-texts">5,400+ Orders & reviews</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- related products section -->
+            <div class="group-288">
+              <div>
+                <div class="group-290">
+                  <div class="promo-group">
+                    <p class="promotion__text ui heading size-textlg">Buy it now</p>
+                    <div class="promo-dots-group">
+                      <div class="profile__image--circle-small"></div>
+                      <div class="profile__image--circle-large"></div>
+                    </div>
+                    <div class="promo-mask-group">
+                      <div class="promotion__stack">
+                        <div class="promotion__title-container">
+                          <h4 class="promotion__title ui heading size-headinglg">
+                            Explore summer crops from top sellers
+                          </h4>
+                          <div class="profile__image--circle-medium"></div>
+                        </div>
+                        <img src="public/images/img_purepng_122x96.png" alt="Promo Image" class="promotion__image" />
+                      </div>
+                      <img src="public/images/img_arrow_right_black_900.svg" alt="Promo Arrow" class="arrow__icon" />
+                    </div>
+                  </div>
+                  <img
+                    src="public/images/img_purepng_168x108.png"
+                    alt="Promo Main Image"
+                    class="promotion__image--large"
+                  />
+                </div>
+              </div>
+              <div class="group-304">
+                <div class="related-products-header">
+                  <h4 id="headingfix" class="related__title ui heading size-headings">Related Products</h4>
+                  <div class="related__link">
+                    <a href="#">
+                      <p id="sidefix" class="ui heading size-textmd">View all</p>
+                    </a>
+                    <img src="public/images/img_arrow_right_gray_700.svg" alt="View All Arrow" class="link__icon" />
+                  </div>
+                </div>
+                <div class="group-310">
+                  <div class="product-details">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/img_group_113.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">Stuttgart Onions</p>
+                      <p class="ui heading size-texts">256 Reviews 1628 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 36 Rs/kg</p>
+                  </div>
+                  <div class="product-details-1">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/img_user_white_a700.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">Durum Wheat</p>
+                      <p class="ui heading size-texts">905 Reviews 8906 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 33 Rs/kg</p>
+                  </div>
+                  <div class="product-details">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/img_group_113_54x54.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">
+                        Sunflower Oil Seeds
+                      </p>
+                      <p class="ui heading size-texts">191 Reviews 1682 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 188 Rs/kg</p>
+                  </div>
+                  <div class="product-details">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/Kala Chana.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">Kala Chana</p>
+                      <p class="ui heading size-texts">364 Reviews 2791 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 36 Rs/kg</p>
+                  </div>
+                  <div class="product-details">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/Black Urad.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">
+                        Black Gram (Urad Dal)
+                      </p>
+                      <p class="ui heading size-texts">128 Reviews 0850 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 60 Rs/kg</p>
+                  </div>
+                  <div class="product-details-5">
+                    <button class="product-details__icon-button">
+                      <img src="public/images/img_group_113_1.png" />
+                    </button>
+                    <div class="product-details__description">
+                      <p class="sidebar__info-column__stack__content__text ui heading size-texts">Tobacco</p>
+                      <p class="ui heading size-texts">116 Reviews 0640 orders</p>
+                    </div>
+                    <p class="product-details__price ui heading size-texts">Price : 61 Rs/kg</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

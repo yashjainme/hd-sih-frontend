@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI Agricultural Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+
+
+        /* Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  padding: 0 !important; /* Removes extra padding from the overall navbar */
+  border-bottom: 2px solid #8bc34a; /* Green border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures navbar stays on top */
+  width: 100%;
+}
+
+/* Top Section Styling */
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;/* Centers elements horizontally */
+  gap: 30px; /* Adds space between logo and button */
+  width: 100%;
+  /* max-width: 1200px; */
+  padding: 15px 0;
+  background: linear-gradient(to right, #f7f3e9, #e3eaa7); /* Light beige to pale green gradient */
+}
+
+/* Logo Section Styling */
+.logo-section {
+  display: flex;
+ 
+}
+
+/* Logo Image Styling */
+.Team-logo {
+  width: 80px;
+  height: 4.5rem;
+
+}
+
+/* Login/Register Button Styling */
+.login-register {
+  display: flex;
+  align-items: center;
+  padding-right: 22px !important;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background-color: #ffeb3b; /* Bright yellow for visibility */
+  border: 2px solid #ff9800; /* Orange border */
+  border-radius: 20px;
+  color: #ff9800; /* Orange text color */
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  
+  
+}
+
+.login-btn:hover {
+  background-color: #ff9800; /* Solid orange on hover */
+  color: white;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  display: flex;
+  justify-content: center; /* Centers all navigation links */
+  align-items: center;
+  gap: 30px; /* Adds space between links */
+  padding: 10px 0;
+  width: 98.9vw;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  background-color: #e0f7fa; /* Light cyan background for lower section */
+  border-top: 1px solid #c5e1a5; /* Light green border */
+}
+
+/* Link Styles */
+.nav-links a {
+  text-decoration: none;
+  color: #005b96; /* Blue color for links */
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.current {
+  background-color: #4caf50; /* Green for the current page */
+  color: white;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+  background-color: #ff5722; /* Orange on hover */
+  color: white;
+}
+
+/* Right Links Styling */
+.right-links {
+  display: flex;
+  gap: 30px;
+}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .team-section {
+            margin-top: 50px;
+        }
+        .team-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2e7d32;
+        }
+        .team-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .team-list li {
+            margin: 10px 0;
+        }
+        .features {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .features h2 {
+            font-size: 2rem;
+            color: #2e7d32;
+        }
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features ul li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+        .features ul li::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #388e3c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e7d32;
+            color: #fff;
+        }
+        #website-name{
+  margin-top: 1.5rem;
+  font-size:x-large;
+}
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="navbar">
+          <div class="top-section">
+            <div class="logo-section">
+              <img src="crop care.png" alt="Team Logo" class="Team-logo"><span id="website-name">Crop-Care</span>
+            </div>
+            <div class="login-register">
+              <a href="form.html" class="login-btn">Login/Register</a>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" >HOME</a>
+            <div class="right-links">
+              <a href="disease.html">DISEASE</a>
+              <a href="prediction.html">YIELD</a>
+              <a href="price.html">PRICE</a>
+              <a href="fertilizer.html">FERTILIZER</a>
+              <a target="_blank" href="discussion-forum/Forum.html">FORUM</a>
+              <a target="_blank" href="chatbot.html">CHATBOT</a>
+              <a href="aboutUs.html" class="current">ABOUT US</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+    <div class="container">
+        <header class="header">
+            <h1>About Us</h1>
+            <p>We are a passionate team of six individuals dedicated to improving agricultural practices through AI and data-driven solutions.</p>
+        </header>
+
+        <section class="features">
+            <h2>Our Platform Features</h2>
+            <ul>
+                <li><strong>AI-Driven Disease Detection:</strong> Instantly analyze crop images to detect diseases using cutting-edge CNN models.</li>
+                <li><strong>Risk Prediction API:</strong> Predict disease outbreaks by analyzing weather data and historical patterns.</li>
+                <li><strong>Smart Yield Prediction:</strong> Optimize your crop yield with actionable insights and recommendations.</li>
+                <li><strong>Dynamic Price Prediction:</strong> Plan your crop sales by forecasting future prices based on market trends.</li>
+                <li><strong>Fertilizer Optimization Engine:</strong> Suggest the best fertilizers and quantities based on crop and soil conditions.</li>
+                <li><strong>Farmer Forum for Knowledge Sharing:</strong> Engage with a community of farmers to share insights and get expert advice.</li>
+            </ul>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <ul class="team-list">
+                <li>Pratham Mittal </li>
+                <li>Dhruv Gupta</li>
+                <li>Mithas Kaushik </li>
+                <li>Yash Jain</li>
+                <li>Karan Kumar </li>
+                <li>Chinmay Singh</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 AI Agricultural Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

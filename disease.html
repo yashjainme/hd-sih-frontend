@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare - Crop Prediction and Risk Assessment</title>
+    <link rel="stylesheet" href="disease.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="disease.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="top-section">
+                <div class="logo-section">
+                    <img src="crop care.png" alt="Crop Care Logo" class="Team-logo"><span id="website-name">Crop-Care</span>
+                </div>
+                <div class="login-register">
+                    <a href="form.html" class="login-btn">Login/Register</a>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" >HOME</a>
+                <div class="right-links">
+                    <a href="disease.html" class="current">DISEASE</a>
+                    <a href="prediction.html">YIELD</a>
+                    <a href="price.html">PRICE</a>
+                    <a href="fertilizer.html">FERTILIZER</a>
+                    <a target="_blank" href="discussion-forum/Forum.html">FORUM</a>
+                    <a target="_blank" href="chatbot.html">CHATBOT</a>
+                    <a target="_blank" href="marketplace/index.html">MARKETPLACE</a>
+                    <a href="aboutUs.html">ABOUT US</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="crop-tool-wrapper">
+        <h1>Crop Prediction and Risk Assessment</h1>
+
+        <form id="riskForm" enctype="multipart/form-data">
+            <div class="upload-section">
+                <label class="file-upload">
+                    <input type="file" id="file-upload" accept="image/*">
+                    Drag and drop file here or <span>Browse files</span>
+                </label>
+                <p id="file-name">No file selected</p>
+            </div>
+
+            <div class="city-input">
+                <label for="city">Enter the city name for weather data:</label>
+                <input type="text" id="city" placeholder="Enter city name">
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="show-image">Show Image</button>
+                <button type="submit" id="predict-risk">Predict and Assess Risk</button>
+            </div>
+        </form>
+
+        <div class="results">
+            <h2>Prediction and Risk Assessment Results</h2>
+            <div class="prediction">
+                <!-- Prediction results will be displayed here -->
+            </div>
+            <div class="image-preview" style="display: none;">
+                <h3>Uploaded Image:</h3>
+                <img id="uploaded-image" alt="Uploaded Image">
+            </div>
+            <div id="download-section">
+                <!-- Download button will be added here -->
+            </div>
+            <div id="json-content">
+                <!-- Full JSON content will be displayed here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

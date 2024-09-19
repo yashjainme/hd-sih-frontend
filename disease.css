@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f0f8ff, #c2e59c); /* Light blue to light green gradient */
+  background-attachment: fixed;
+  background-size: cover;
+  color: #333; /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: rgba(245, 245, 245, 0.9); /* Light grey for overall header */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  padding: 0 !important; /* Removes extra padding from the overall navbar */
+  border-bottom: 2px solid #8bc34a; /* Green border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures navbar stays on top */
+  width: 100%;
+}
+
+/* Top Section Styling */
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Centers elements horizontally */
+  gap: 30px; /* Adds space between logo and button */
+  width: 100%;
+  padding: 15px 0;
+  background: linear-gradient(to right, #f7f3e9, #e3eaa7); /* Light beige to pale green gradient */
+}
+
+/* Logo Section Styling */
+.logo-section {
+  display: flex;
+}
+
+/* Logo Image Styling */
+.Team-logo {
+  width: 80px;
+  height: 4.5rem;
+}
+
+/* Login/Register Button Styling */
+.login-register {
+  display: flex;
+  align-items: center;
+  padding-right: 22px !important;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background-color: #ffeb3b; /* Bright yellow for visibility */
+  border: 2px solid #ff9800; /* Orange border */
+  border-radius: 20px;
+  color: #ff9800; /* Orange text color */
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #ff9800; /* Solid orange on hover */
+  color: white;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  display: flex;
+  justify-content: center; /* Centers all navigation links */
+  align-items: center;
+  gap: 30px; /* Adds space between links */
+  padding: 10px 0;
+  width: 98.9vw;
+  margin: 0 auto;
+  background-color: #e0f7fa; /* Light cyan background for lower section */
+  border-top: 1px solid #c5e1a5; /* Light green border */
+}
+
+/* Link Styles */
+.nav-links a {
+  text-decoration: none;
+  color: #005b96; /* Blue color for links */
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.current {
+  background-color: #4caf50; /* Green for the current page */
+  color: white;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+  background-color: #ff5722; /* Orange on hover */
+  color: white;
+}
+
+/* Right Links Styling */
+.right-links {
+  display: flex;
+  gap: 30px;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 1139px) {
+  .top-section {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    /* padding: 10px 0; */
+  }
+
+  .logo-section {
+    justify-content: center;
+  }
+
+  .login-register {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .nav-links, .nav-links .right-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+    gap: 15px; /* Adds even spacing between the links */
+    padding: 10px 0;
+  }
+  
+  .nav-links a, .right-links a {
+    text-decoration: none;
+    color: #005b96;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .top-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .Team-logo {
+    width: 60px;
+    height: 3.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Crop Tool Wrapper Styling */
+.crop-tool-wrapper {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 600px; /* Max width for better view on larger screens */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Header Styling */
+  h1 {
+    color: #2f4f4f;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* File Upload Section */
+  .upload-section {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .file-upload {
+    display: block;
+    padding: 10px;
+    border: 2px dashed #8fbc8f;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #666;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .file-upload:hover {
+    border-color: #556b2f;
+  }
+  
+  .file-upload input {
+    display: none;
+  }
+  
+  .file-upload span {
+    color: #556b2f;
+    text-decoration: underline;
+  }
+  
+  #file-name {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* City Input Section */
+  .city-input {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .city-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .city-input input:focus {
+    border-color: #8fbc8f;
+  }
+  
+  /* Button Group Styling */
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #6b8e23;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #556b2f;
+  }
+  
+  /* Results Section */
+  .results {
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .results h2 {
+    color: #2f4f4f;
+    margin-bottom: 10px;
+  }
+  
+  .prediction p {
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .prediction span {
+    font-weight: bold;
+    color: #8fbc8f;
+  }
+  #website-name{
+    margin-top: 1.5rem;
+    font-size:x-large;
+  }
+
+
+
+
+
+
+  .download-btn {
+    background-color: #6b8e23; /* Olive green background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding around the text */
+    margin: 5px; /* Margin around the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Ensure proper spacing and alignment */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  
+  .download-btn:hover {
+    background-color: #556b2f; /* Darker green background on hover */
+  }
+  
+
+
+
+  #uploaded-image {
+    width: 256px;
+    height: 256px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}

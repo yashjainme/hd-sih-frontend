@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare - Fertilizer Prediction</title>
+    <link rel="stylesheet" href="fertilizer.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <div class="top-section">
+            <div class="logo-section">
+              <img src="crop care.png" alt="Team Logo" class="Team-logo"><span id="website-name">Crop-Care</span>
+            </div>
+            <div class="login-register">
+              <a href="form.html" class="login-btn">Login/Register</a>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <div class="right-links">
+              <a href="disease.html" >DISEASE</a>
+              <a href="prediction.html">YIELD</a>
+              <a href="price.html">PRICE</a>
+              <a href="fertilizer.html" class="current">FERTILIZER</a>
+              <a target="_blank" href="discussion-forum/Forum.html">FORUM</a>
+              <a target="_blank" href="chatbot.html">CHATBOT</a>
+              <a target="_blank" href="marketplace/index.html">MARKETPLACE</a>
+              <a href="aboutUs.html">ABOUT US</a>
+            </div>
+          </div>
+        </div>
+    </header>
+    
+    <div class="form-container">
+        <h2>Crop Prediction and Fertilizer Recommendation</h2>
+        
+        <div class="form-group">
+            <input type="number" id="temperature" placeholder="Enter temperature">
+        </div>
+    
+        <div class="form-group">
+            <input type="number" id="humidity" placeholder="Enter humidity">
+        </div>
+    
+        <div class="form-group">
+            <input type="number" id="moisture" placeholder="Enter moisture">
+        </div>
+    
+        <div class="form-group">
+            <select id="soil-type">
+            
+
+      <option value="Default" disabled selected hidden id="Default">Select Soil Type</option>
+      <option value="Sandy">Sandy</option>
+      <option value="Loamy">Loamy</option>
+      <option value="Black">Black</option>
+      <option value="Red">Red</option>
+      <option value="Clayey">Clayey</option>
+              </select>
+          </div>
+      
+
+         
+
+
+          <div class="form-group">
+              <select id="crop-type">
+                  <option value="" disabled selected hidden>Select Crop Type</option>
+                  <option value="Maize">Maize</option>
+                  <option value="Sugarcane">Sugarcane</option>
+                  <option value="Cotton">Cotton</option>
+                  <option value="Tobacco">Tobacco</option>
+                  <option value="Paddy">Paddy</option>
+                  <option value="Barley">Barley</option>
+                  <option value="Ground Nuts">Ground Nuts</option>
+                  <option value="Millets">Millets</option>
+                  <option value="Oil Seeds">Oil Seeds</option>
+                  <option value="Pulses">Pulses</option>
+                  <option value="Wheat">Wheat</option>
+              </select>
+          </div>
+      
+          <div class="form-group">
+              <input type="number" id="nitrogen" placeholder="Enter Nitrogen level">
+          </div>
+      
+          <div class="form-group">
+              <input type="number" id="potassium" placeholder="Enter Potassium level">
+          </div>
+      
+          <div class="form-group">
+              <input type="number" id="phosphorous" placeholder="Enter Phosphorous level">
+          </div>
+      
+          <button id="predict" class="button">Predict Fertilizer</button>
+      </div>
+      
+      <div id="result" class="output-container">
+          <h3>Recommended Fertilizer:</h3>
+          <p id="fertilizer-output"></p>
+      </div>
+      
+      <script src="fertilizer.js"></script>
+  </body>
+  </html>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

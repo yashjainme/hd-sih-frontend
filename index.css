@@ -1,0 +1,917 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f0f8ff, #c2e59c); /* Light blue to light green gradient */
+  background-attachment: fixed;
+  background-size: cover;
+  color: #333; /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: rgba(245, 245, 245, 0.9); /* Light grey for overall header */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  padding: 0 !important; /* Removes extra padding from the overall navbar */
+  border-bottom: 2px solid #8bc34a; /* Green border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures navbar stays on top */
+  width: 100%;
+}
+
+/* Top Section Styling */
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Centers elements horizontally */
+  gap: 30px; /* Adds space between logo and button */
+  width: 100%;
+  padding: 15px 0;
+  background: linear-gradient(to right, #f7f3e9, #e3eaa7); /* Light beige to pale green gradient */
+}
+
+/* Logo Section Styling */
+.logo-section {
+  display: flex;
+}
+
+/* Logo Image Styling */
+.Team-logo {
+  width: 80px;
+  height: 4.5rem;
+}
+
+/* Login/Register Button Styling */
+.login-register {
+  display: flex;
+  align-items: center;
+  padding-right: 22px !important;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background-color: #ffeb3b; /* Bright yellow for visibility */
+  border: 2px solid #ff9800; /* Orange border */
+  border-radius: 20px;
+  color: #ff9800; /* Orange text color */
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #ff9800; /* Solid orange on hover */
+  color: white;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  display: flex;
+  justify-content: center; /* Centers all navigation links */
+  align-items: center;
+  gap: 30px; /* Adds space between links */
+  padding: 10px 0;
+  width: 98.9vw;
+  margin: 0 auto;
+  background-color: #e0f7fa; /* Light cyan background for lower section */
+  border-top: 1px solid #c5e1a5; /* Light green border */
+}
+
+/* Link Styles */
+.nav-links a {
+  text-decoration: none;
+  color: #005b96; /* Blue color for links */
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.current {
+  background-color: #4caf50; /* Green for the current page */
+  color: white;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+  background-color: #ff5722; /* Orange on hover */
+  color: white;
+}
+
+/* Right Links Styling */
+.right-links {
+  display: flex;
+  gap: 30px;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 1139px) {
+  .top-section {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    /* padding: 10px 0; */
+  }
+
+  .logo-section {
+    justify-content: center;
+  }
+
+  .login-register {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .nav-links, .nav-links .right-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+    gap: 15px; /* Adds even spacing between the links */
+    padding: 10px 0;
+  }
+  
+  .nav-links a, .right-links a {
+    text-decoration: none;
+    color: #005b96;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .top-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .Team-logo {
+    width: 60px;
+    height: 3.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Slider Container Styling */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  height: 500px; /* Default height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* Slider Inner Container */
+.slider2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+  height: 100%;
+}
+
+/* Individual Slide */
+.slide2 {
+  min-width: 100%;
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Images Inside Slider */
+.slider2 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around images */
+}
+
+/* Navigation Buttons */
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px; /* Reduced padding to bring buttons closer to images */
+}
+
+.navigation button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #f56b2a;
+  color: #f56b2a;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: 10rem;
+  margin-right: 12rem;
+}
+
+.navigation button:hover {
+  background-color: #f56b2a;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media (max-width: 1024px) {
+  .slider-container {
+    height: 400px; /* Adjusted height for tablets */
+  }
+
+  .navigation button {
+    padding: 8px 16px; /* Smaller buttons */
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .slider-container {
+    height: 300px; /* Smaller height for mobile */
+  }
+
+  .navigation button {
+    padding: 6px 12px; /* Even smaller buttons */
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .slider2 img {
+    border-radius: 5px; /* Reduce border-radius for mobile */
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .slider-container {
+    height: 200px; /* Compact height for small screens */
+  }
+
+  .navigation button {
+    padding: 5px 10px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .slider2 img {
+    border-radius: 3px; /* Further reduce border-radius for small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blog-slider {
+display: flex;
+width: 90%;
+height: 350px;
+margin: 40px auto; /* Center the container */
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Slider styling */
+.slider {
+flex: 1;
+overflow: hidden;
+position: relative;
+}
+
+.slides {
+display: flex;
+width: 300%;
+animation: slide 12s infinite;
+}
+
+.slides img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s ease; /* Smooth transition for zoom effect */
+}
+
+.slides img:hover {
+transform: scale(1.05); /* Zoom in on hover */
+}
+
+
+
+@media (max-width: 425px) {
+  .blog-slider{
+    height: max-content;
+    flex-direction: column;
+  }
+
+  .slider{
+    height: 400px;
+  }
+  .slides{
+    height: 200px;
+  }
+  
+}
+
+
+/* Information section styling */
+.info {
+flex: 1;
+padding: 30px;
+background-color: #fff8dc; /* Light wheat color */
+display: flex;
+flex-direction: column;
+justify-content: center;
+border-left: 4px solid #8fbc8f; /* Green border to match the crop theme */
+}
+
+.info h2 {
+color: #556b2f; /* Dark olive green for title */
+margin-bottom: 10px;
+}
+
+.info p {
+color: #6b8e23; /* Olive green for the paragraph */
+line-height: 1.5;
+}
+
+/* Button styling */
+.read-more {
+margin-top: 20px;
+padding: 10px 20px;
+border: 2px solid #6b8e23; /* Olive green border */
+background-color: #fff8dc; /* Light wheat background */
+color: #6b8e23;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+transition: all 0.3s ease;
+
+}
+
+.read-more:hover {
+background-color: #6b8e23;
+color: #fff;
+
+}
+
+/* Keyframes for slider animation */
+@keyframes slide {
+0% { transform: translateX(0); }
+33% { transform: translateX(-100%); }
+66% { transform: translateX(-200%); }
+100% { transform: translateX(0); }
+}
+
+
+
+
+
+footer {
+background-color: #fff; /* White background */
+color: #004d00; /* Dark green text */
+padding: 50px 0;
+border-top: 6px solid #8bc34a; /* Light green border for a fresh touch */
+box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+display: flex;
+justify-content: space-between;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.follow-us h3,
+.contact-us h3 {
+margin-bottom: 20px;
+font-size: 24px;
+letter-spacing: 1px;
+color: #004d00; /* Dark green for headings */
+font-weight: 600;
+position: relative;
+}
+
+.follow-us h3::after,
+.contact-us h3::after {
+content: "";
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 50px;
+height: 3px;
+background-color: #8bc34a; /* Green underline */
+}
+
+.social-icons {
+display: flex;
+margin-bottom: 20px;
+}
+
+.social-icons a {
+font-size: 20px;
+margin-right: 20px;
+color: #004d00; /* Green for the icons */
+padding: 12px;
+border-radius: 50%;
+background: rgba(0, 77, 0, 0.1); /* Slight green background on icons */
+transition: all 0.4s ease;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+.social-icons a:hover {
+transform: translateY(-10px);
+background-color: #8bc34a; /* Green hover effect */
+box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+color: #fff; /* White on hover */
+}
+
+.follow-us p {
+font-size: 14px;
+color: #555; /* Light grey for copyright text */
+margin-top: 25px;
+opacity: 0.8;
+}
+
+.contact-us {
+text-align: right;
+}
+
+.contact-us p {
+margin-bottom: 10px;
+font-size: 16px;
+}
+
+.contact-us a {
+color: #004d00; /* Dark green for links */
+text-decoration: none;
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+.contact-us a:hover {
+color: #8bc34a; /* Green on hover */
+text-decoration: underline;
+transform: translateY(-5px);
+}
+
+.contact-us i {
+margin-right: 10px;
+color: #004d00; /* Dark green icons */
+}
+
+/* Floating Animation for Social Icons */
+@keyframes float {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-10px);
+}
+100% {
+    transform: translateY(0);
+}}
+/* Footer Shadow Animation */
+@keyframes shadow-pulse {
+0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+50% {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#service {
+  width: 100%;
+  padding: 70px 0;
+  background: #faf9f6;
+}
+
+/* Title text styling */
+.title-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title-text h2 {
+  font-size: 30px;
+  color: #5f5f5f;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+/* Service box styling */
+.service-box {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+/* Single service styling */
+.single-service {
+  flex-basis: 48%;
+  text-align: center;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background-color: #fff8dc;
+}
+
+.single-service:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.single-service img {
+  width: 100%;
+  border-radius: 7px;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.single-service:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay styling */
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #8fbc8f);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.single-service:hover .overlay {
+  opacity: 1;
+}
+
+/* Service description styling */
+.service-des {
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: bottom 1s ease, opacity 1s ease;
+  color: #fff;
+}
+
+.single-service:hover .service-des {
+  bottom: 30%;
+  opacity: 1;
+}
+
+hr {
+  background: #fff;
+  height: 2px;
+  border: 0;
+  margin: 15px auto;
+  width: 60%;
+}
+
+.service-des p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+
+/* Tablets and smaller devices */
+@media (max-width: 1024px) {
+  .title-text h2 {
+    font-size: 26px;
+  }
+
+  .service-box {
+    width: 90%;
+  }
+
+  .single-service {
+    flex-basis: 48%;
+    margin-bottom: 15px;
+  }
+
+  .service-des p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  #service {
+    padding: 50px 0;
+  }
+
+  .title-text h2 {
+    font-size: 22px;
+  }
+
+  .service-box {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .single-service {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .service-des p {
+    font-size: 12px;
+  }
+
+  hr {
+    width: 50%;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .title-text h2 {
+    font-size: 18px;
+  }
+
+  .service-des p {
+    font-size: 11px;
+  }
+  .service-des h3 {
+    font-size: 16px;
+  }
+
+  .service-box {
+    width: 95%;
+  }
+
+  .single-service {
+    flex-basis: 100%;
+  }
+
+  hr {
+    margin-top: 12px;
+    width: 40%;
+  }
+}
+/* Smaller mobile devices */
+@media (max-width: 320px) {
+  .title-text h2 {
+    font-size: 18px;
+  }
+
+  .service-des p {
+    font-size: 8px;
+  }
+  .service-des h3 {
+    font-size: 12px;
+  }
+
+  .service-box {
+    width: 95%;
+  }
+
+  .single-service {
+    flex-basis: 100%;
+  }
+
+  hr {
+    /* margin: 2%; */
+    margin-top: 8px;
+    /* padding: 0%; */
+    width: 40%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.crop-blog-section {
+padding: 40px;
+background-color: #f3efe5; /* Light beige background to give an earthy feel */
+text-align: center;
+font-family: 'Arial', sans-serif; /* Simple and readable font */
+margin-top: 1rem;
+}
+
+/* Section Title */
+.crop-blog-section h2 {
+font-size: 36px;
+color: #4f4f4f; /* Dark grey for contrast */
+margin-bottom: 30px;
+}
+
+/* Blog Posts Container */
+.crop-blog-posts {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+justify-content: center;
+}
+
+/* Individual Blog Post */
+.crop-blog-post {
+background-color: #fff;
+border: 1px solid #dcd2bb;
+border-radius: 10px;
+overflow: hidden;
+width: 320px; /* Fixed width for each blog post */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Blog Post Hover Effect */
+.crop-blog-post:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Post Image */
+.crop-blog-post img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-bottom: 1px solid #dcd2bb;
+}
+
+/* Blog Post Content */
+.post-content {
+padding: 20px;
+text-align: left;
+}
+
+/* Blog Post Title */
+.crop-blog-post h3 {
+font-size: 22px;
+color: #3b3b3b; /* Darker shade for title */
+margin-bottom: 10px;
+}
+
+/* Blog Post Excerpt */
+.crop-blog-post p {
+font-size: 16px;
+color: #5f5f5f;
+line-height: 1.6;
+margin-bottom: 15px;
+}
+
+/* Read More Button */
+.crop-blog-post .read-more {
+display: inline-block;
+padding: 10px 20px;
+background-color: #8bc34a; /* Green for an organic feel */
+color: #fff;
+border-radius: 4px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+
+/* Read More Button Hover Effect */
+.crop-blog-post .read-more:hover {
+background-color: #689f38;
+}
+#website-name{
+margin-top: 1.5rem;
+font-size:x-large;
+}

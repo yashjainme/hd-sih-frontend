@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare - Price Prediction</title>
+    <link rel="stylesheet" href="price.css">
+    <script src="price.js"></script>
+</head>
+<body>
+    <header>
+      <div class="navbar">
+        <div class="top-section">
+            <div class="logo-section">
+                <img src="crop care.png" alt="Team Logo" class="Team-logo"><span id="website-name">Crop-Care</span>
+            </div>
+            <div class="login-register">
+                <a href="form.html" class="login-btn">Login/Register</a>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" >HOME</a>
+            <div class="right-links">
+                <a href="disease.html">DISEASE</a>
+                <a href="prediction.html">YIELD</a>
+                <a href="price.html" class="current">PRICE</a>
+                <a href="fertilizer.html">FERTILIZER</a>
+                <a target="_blank" href="discussion-forum/Forum.html">FORUM</a>
+                <a target="_blank" href="chatbot.html">CHATBOT</a>
+                <a target="_blank" href="marketplace/index.html">MARKETPLACE</a>
+                <a href="aboutUs.html">ABOUT US</a>
+            </div>
+        </div>
+    </div>
+    
+    </header>
+
+
+    <div class="price-prediction">
+        <h1>Input Crop Features Here</h1>
+        <div class="input-group">
+            <input type="number" id="year" placeholder="Year" >
+
+
+            <select id="cropName">
+                <option value="" disabled selected hidden>Select Crop Type</option>
+                <option value="Onion">Onion</option>
+                <option value="Potato">Potato</option>
+                <option value="Tomato">Tomato</option>
+                <option value="Apple">Apple</option>
+                <option value="Bhindi">Bhindi</option>
+                <option value="Bitter Gourd">Bitter Gourd</option>
+                <option value="rice">Rice</option>
+                <option value="Dry Fodder">Dry Fodder</option>
+                <option value="Green Fodder">Green Fodder</option>
+                <option value="chickpea">Chickpea</option>
+                <option value="Banana">Banana</option>
+                <option value="Brinjal">Brinjal</option>
+                <option value="Cabbage">Cabbage</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="Raddish">Raddish</option>
+                <option value="Sponge Gourd">Sponge Gourd</option>
+                <option value="Tinda">Tinda</option>
+                <option value="Maize">Maize</option>
+                <option value="pigeonbeans">Pigeonbeans</option>
+                <option value="Green Chilli">Green Chilli</option>
+                <option value="cotton">Cotton</option>
+                <option value="Lemon">Lemon</option>
+                <option value="Mango">Mango</option>
+                <option value="Pumpkin">Pumpkin</option>
+                <option value="Capsicum">Capsicum</option>
+                <option value="papaya">Papaya</option>
+                <option value="Cucumbar">Cucumbar</option>
+                <option value="coconut">Coconut</option>
+                <option value="Grapes">Grapes</option>
+                <option value="Colacasia">Colacasia</option>
+                <option value="Cauliflower">Cauliflower</option>
+                <option value="muskmelon">Muskmelon</option>
+                <option value="Wheat">Wheat</option>
+                <option value="jute">Jute</option>
+                <option value="Leafy Vegetable">Leafy Vegetable</option>
+                <option value="orange">Orange</option>
+                <option value="Carrot">Carrot</option>
+                <option value="blackgram">Blackgram</option>
+                <option value="Cluster Beans">Cluster Beans</option>
+                <option value="kidneybeans">Kidneybeans</option>
+                <option value="Guava">Guava</option>
+                <option value="Methi(Leaves)">Methi(Leaves)</option>
+                <option value="Pomegranate">Pomegranate</option>
+                <option value="mungbean">Mungbean</option>
+                <option value="French Beans">French Beans</option>
+                <option value="mothbeans">Mothbeans</option>
+                <option value="Sweet Potato">Sweet Potato</option>
+                <option value="Pear">Pear</option>
+                <option value="Mousambi">Mousambi</option>
+                <option value="lentil">Lentil</option>
+                <option value="coffee">Coffee</option>
+            </select>
+
+
+            <input type="number" id="prod" placeholder="Crop Production (tonnes)" >
+            <input type="number" id="demand" placeholder="Demand (tonnes)" >
+        </div>
+        <button id="predict-button">Predict</button>
+        <div class="result">
+            <h2>Predicted Price:</h2>
+            <p id="price-result">0.0</p>
+        </div>
+    </div>
+  
