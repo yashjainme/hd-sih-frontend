@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const discussionId = params.get('discussionId'); // Get the 'discussionId' from the URL
     console.log(discussionId)
     // Fetch discussion details from the backend using the discussion ID
-    fetch(`http://localhost:8000/api/discussions/get-discussion-by-id/${discussionId}`,
+    fetch(`https://hd-sih-forum.onrender.com/api/discussions/get-discussion-by-id/${discussionId}`,
         {
             credentials:"include"
         }
@@ -47,7 +47,7 @@ function displayDiscussion(discussion) {
 // Function to fetch and display comments
 function fetchComments(discussionId) {
     // Fetch comments from the backend for the specific discussion
-    fetch(`http://localhost:8000/api/comments/get-discussion-comments/${discussionId}`)
+    fetch(`https://hd-sih-forum.onrender.com/api/comments/get-discussion-comments/${discussionId}`)
         .then(response => response.json())
         .then(comments => {
             displayComments(comments.data);
@@ -83,7 +83,7 @@ function postComment(discussionId, commentText) {
     };
 
     // Send a POST request to the backend to add the comment
-    fetch(`http://localhost:8000/api/comments/add-comment`, {
+    fetch(`https://hd-sih-forum.onrender.com/api/comments/add-comment`, {
         method: 'POST',
         credentials:"include",
         headers: {
