@@ -13,43 +13,19 @@
     </header>
 
     <section class="discussion-list">
-        <div class="discussion-card">
-            <a href="discussion.html">
-                <h2 class="discussion-title">What are common wheat diseases?</h2>
-            <p class="discussion-description">Discuss the common diseases affecting wheat and their prevention methods.</p>
-            <span class="author">Posted by FarmerJohn</span>
-            <div class="tags">
-                <span class="tag">Wheat</span>
-                <span class="tag">Fungus</span>
-                <span class="tag">Prevention</span>
-            </div>
-            </a>
-        </div>
-
-        <div class="discussion-card">
-            <a href="discussion.html"><h2 class="discussion-title">How to handle rice blast disease?</h2>
-                <p class="discussion-description">Looking for advice on controlling rice blast disease and reducing crop loss.</p>
-                <span class="author">Posted by GreenFarmer</span>
-                <div class="tags">
-                    <span class="tag">Rice</span>
-                    <span class="tag">Blast</span>
-                    <span class="tag">Fungal</span>
-                </div></a>
-        </div>
-
-        <div class="discussion-card" >
-            <a href="discussion.html" >
-                <h2 class="discussion-title">Is maize rust treatable?</h2>
-            <p class="discussion-description">Discuss maize rust treatment options and prevention strategies.</p>
-            <span class="author">Posted by CropExpert</span>
-            <div class="tags">
-                <span class="tag">Maize</span>
-                <span class="tag">Rust</span>
-                <span class="tag">Treatment</span>
-            </div>
-            </a>
-        </div>
+        
     </section>
+    <div id="discussion-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Start a New Discussion</h2>
+            <form id="discussion-form">
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <textarea id="content" name="content" placeholder="Content" rows="5" required></textarea>
+                <button type="submit">Post Discussion</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

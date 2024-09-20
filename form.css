@@ -226,3 +226,10 @@ a:hover {
         font-family: "Rubik", sans-serif;
         transition: color 600ms;
       } */
+      .input-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0; /* Increased margin for more vertical spacing */
+    }
+        

@@ -22,14 +22,14 @@
                 <span> Login</span>
             </div>
 
-            <form get="" enctype="multipart/form-data"
-                onsubmit="return login()">
+            <form  enctype="multipart/form-data"
+                onsubmit="return login(event)">
                 
                 <div class="input-box">
-                    <input type="text" id="user" class="input-field" required>
+                    <input type="email" id="user" class="input-field" required>
 
                     <label for="user" class="label">
-                        Username
+                        Email
                     </label>
 
                     <i class="bx bx-user icon"></i>
@@ -44,15 +44,7 @@
                     <i class="bx bx-lock-alt icon" id="show-password"></i>
                 </div>
 
-                <div class="remember-forgot">
-                    <div class="remember-me">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Remember me</label>
-                    </div>
-                    <div class="forgot">
-                        <a href="#">Forgot password</a>
-                    </div>
-                </div>
+                
 
                 <div class="input-box">
                     <input type="submit" class="input-submit" value="Login">
@@ -60,7 +52,7 @@
                 
                 <div class="register">
                     <span>Don't have an account?
-                        <a href="#">Register</a></span>
+                        <a href="registration.html">Register</a></span>
                 </div>
 
             </form>

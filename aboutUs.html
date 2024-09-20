@@ -14,8 +14,14 @@
         }
 
 
+/* Header styling */
+.navheader {
+  background-color: rgba(245, 245, 245, 0.9); /* Light grey for overall header */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
 
-        /* Navbar Styling */
+/* Navbar Styling */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -33,10 +39,9 @@
 .top-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;/* Centers elements horizontally */
+  justify-content: space-between; /* Centers elements horizontally */
   gap: 30px; /* Adds space between logo and button */
   width: 100%;
-  /* max-width: 1200px; */
   padding: 15px 0;
   background: linear-gradient(to right, #f7f3e9, #e3eaa7); /* Light beige to pale green gradient */
 }
@@ -44,14 +49,12 @@
 /* Logo Section Styling */
 .logo-section {
   display: flex;
- 
 }
 
 /* Logo Image Styling */
 .Team-logo {
   width: 80px;
   height: 4.5rem;
-
 }
 
 /* Login/Register Button Styling */
@@ -70,8 +73,6 @@
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  
-  
 }
 
 .login-btn:hover {
@@ -87,7 +88,6 @@
   gap: 30px; /* Adds space between links */
   padding: 10px 0;
   width: 98.9vw;
-  /* max-width: 1200px; */
   margin: 0 auto;
   background-color: #e0f7fa; /* Light cyan background for lower section */
   border-top: 1px solid #c5e1a5; /* Light green border */
@@ -120,6 +120,82 @@
   display: flex;
   gap: 30px;
 }
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 1139px) {
+  .top-section {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    /* padding: 10px 0; */
+  }
+
+  .logo-section {
+    justify-content: center;
+  }
+
+  .login-register {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .nav-links, .nav-links .right-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+    gap: 15px; /* Adds even spacing between the links */
+    padding: 10px 0;
+  }
+  
+  .nav-links a, .right-links a {
+    text-decoration: none;
+    color: #005b96;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .top-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .Team-logo {
+    width: 60px;
+    height: 3.5rem;
+  }
+}
+
+
+
 
         .container {
             width: 90%;
@@ -196,30 +272,32 @@
 <body>
 
 
-    <header>
-        <div class="navbar">
-          <div class="top-section">
-            <div class="logo-section">
+  <header class="navheader">
+    <div class="navbar">
+      <div class="top-section">
+          <div class="logo-section">
               <img src="crop care.png" alt="Team Logo" class="Team-logo"><span id="website-name">Crop-Care</span>
-            </div>
-            <div class="login-register">
-              <a href="form.html" class="login-btn">Login/Register</a>
-            </div>
           </div>
-          <div class="nav-links">
-            <a href="index.html" >HOME</a>
-            <div class="right-links">
+          <div class="login-register">
+              <a href="form.html" class="login-btn">Login/Register</a>
+          </div>
+      </div>
+      <div class="nav-links">
+          <a href="index.html" >HOME</a>
+          <div class="right-links">
               <a href="disease.html">DISEASE</a>
               <a href="prediction.html">YIELD</a>
-              <a href="price.html">PRICE</a>
+              <a href="price.html" >PRICE</a>
               <a href="fertilizer.html">FERTILIZER</a>
               <a target="_blank" href="discussion-forum/Forum.html">FORUM</a>
               <a target="_blank" href="chatbot.html">CHATBOT</a>
+              <a target="_blank" href="marketplace/index.html">MARKETPLACE</a>
               <a href="aboutUs.html" class="current">ABOUT US</a>
-            </div>
           </div>
-        </div>
-      </header>
+      </div>
+  </div>
+  
+  </header>
 
 
     <div class="container">
