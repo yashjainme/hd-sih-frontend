@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Send POST request to backend
-            const response = await fetch('http://127.0.0.1:8000/predict-price', {
+            const response = await fetch('https://yashjainme-hd-sih-backend.hf.space/predict-price', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

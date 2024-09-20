@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Send a POST request to the backend
-        fetch('http://127.0.0.1:8000/predict-yield', {
+        fetch('https://yashjainme-hd-sih-backend.hf.space/predict-yield', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

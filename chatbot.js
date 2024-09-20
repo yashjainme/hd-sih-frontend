@@ -56,7 +56,7 @@ function sendMessage() {
         document.getElementById("loading").style.display = "block";
 
         // Send request to Flask backend
-        fetch("http://127.0.0.1:8000/get_response", {
+        fetch("https://yashjainme-hd-sih-backend.hf.space/get_response", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -29,7 +29,7 @@ document.getElementById('predict').addEventListener('click', async () => {
 
   try {
       // Make POST request to backend API
-      const response = await fetch('http://127.0.0.1:8000/predict-fertilizer', {
+      const response = await fetch('https://yashjainme-hd-sih-backend.hf.space/predict-fertilizer', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'

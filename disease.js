@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('city', cityInput.value.trim());
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/combined_risk/', {
+            const response = await fetch('https://yashjainme-hd-sih-backend.hf.space/combined_risk/', {
                 method: 'POST',
                 body: formData
             });
